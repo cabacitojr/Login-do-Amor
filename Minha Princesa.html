@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta Especial 💌</title>
+  <style>
+    body {
+      background: #ffe6e9;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #e63946;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      background: #e63946;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #d62828;
+    }
+
+    .carta {
+      display: none;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    .carta h2 {
+      color: #e63946;
+    }
+
+    .coracao {
+      color: #e63946;
+      font-size: 2.5em;
+      animation: pulsar 1s infinite;
+    }
+
+    @keyframes pulsar {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="login">
+    <h1>💖 Login do Amor 💖</h1>
+    <p>Responda corretamente para abrir a carta!</p>
+    <input type="text" id="pergunta1" placeholder="Onde nos vimos pela primeira vez?">
+    <input type="text" id="pergunta2" placeholder="Qual foi a coisa que eu te pedi?">
+    <button onclick="verificar()">Entrar</button>
+    <p id="erro" style="color:red; display:none;">Resposta errada... tente de novo 😢</p>
+  </div>
+
+  <div class="container carta" id="carta">
+    <h2>Para meu amor 💕</h2>
+    <p>
+      Hoje eu só queria te lembrar o quanto você é especial para mim.<br>
+      Obrigado por estar ao meu lado e por encher minha vida de felicidade.
+    </p>
+    <p>
+      Os bons momentos inesquecíveis que vivemos juntos são muitos, e hoje completam <strong>618 dias</strong> desde aquele dia em São João dos Patos, quando você apareceu e tornou esses dias ainda mais especiais.<br>
+      Você me fez voar por lugares onde jamais imaginei ir e me fez sentir coisas que nunca havia sentido antes.
+    </p>
+    <p>
+      Você tem me feito tão bem, assim como espero estar te fazendo bem também.<br>
+      Você é uma mulher incrível, e eu te admiro muito. Nos mínimos detalhes, você sempre me surpreende.<br>
+      Uma vez você disse que eu sempre elogio tudo o que você faz, porque tudo que você faz é perfeito, sempre um <strong>10/10</strong>.
+    </p>
+    <p>
+      Não sou poeta, nem o melhor com palavras, mas com esse pequeno gesto quero demonstrar meses de sentimentos.<br>
+      Você é minha motivação diária, e espero um dia ser capaz de te dar nas mãos tudo o que você merece.
+    </p>
+    <p>Com abraço boboca, 💖</p>
+    <div class="coracao">❤️</div>
+  </div>
+
+  <script>
+    function verificar() {
+      let resposta1 = document.getElementById("pergunta1").value.toLowerCase().trim();
+      let resposta2 = document.getElementById("pergunta2").value.toLowerCase().trim();
+
+      // 🔑 Defina aqui as respostas corretas
+      if (resposta1 === "sao joao dos patos" && resposta2 === "agua") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("carta").style.display = "block";
+      } else {
+        document.getElementById("erro").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
